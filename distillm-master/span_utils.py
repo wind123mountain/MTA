@@ -102,7 +102,7 @@ def prepare_span_indices_and_weights(t_layer_weights, s_layer_weights, attention
     T_Token_Weights_all = gather_layer_weights(t_layer_weights)
     S_Token_Weights_all = gather_layer_weights(s_layer_weights)
     if w_t_entropy is not None:
-        T_Entropy_Weight_all = gather_layer_weights(w_t_entropy.unsqueeze(0))
+        T_Entropy_Weight_all = gather_layer_weights(w_t_entropy.unsqueeze(0)).squeeze(0)
     else:
         T_Entropy_Weight_all = None
 
